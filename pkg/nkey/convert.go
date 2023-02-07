@@ -11,13 +11,28 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-// Package main, well... no comment
-package main
+// Package nkey contains nkey specific metods
+package nkey
 
 import (
-	"github.com/siredmar/nkey/cmd"
+	"github.com/nats-io/nkeys"
 )
 
-func main() {
-	cmd.Execute()
+// Convert can convert a given nkey seed to public/private keypair
+func Convert(seed string) (string, string, error) {
+	kp, err := nkeys.FromSeed([]byte(seed))
+	if err != nil {
+		return "", "", err
+	}
+	pub, err := kp.PublicKey()
+	if err != nil {
+		return "", "", err
+	}
+
+	priv, err := kp.PrivateKey()
+	if err != nil {
+		return "", "", err
+	}
+
+	return string(priv), pub, nil
 }

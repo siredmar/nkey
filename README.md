@@ -1,13 +1,13 @@
-# Go Repository Template
+# NKEY
 
 [![Keep a Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735)](CHANGELOG.md)
-[![GitHub Release](https://img.shields.io/github/v/release/golang-templates/seed)](https://github.com/golang-templates/seed/releases)
-[![Go Reference](https://pkg.go.dev/badge/github.com/golang-templates/seed.svg)](https://pkg.go.dev/github.com/golang-templates/seed)
-[![go.mod](https://img.shields.io/github/go-mod/go-version/golang-templates/seed)](go.mod)
-[![LICENSE](https://img.shields.io/github/license/golang-templates/seed)](LICENSE)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/golang-templates/seed/build.yml?branch=main)](https://github.com/golang-templates/seed/actions?query=workflow%3Abuild+branch%3Amain)
-[![Go Report Card](https://goreportcard.com/badge/github.com/golang-templates/seed)](https://goreportcard.com/report/github.com/golang-templates/seed)
-[![Codecov](https://codecov.io/gh/golang-templates/seed/branch/main/graph/badge.svg)](https://codecov.io/gh/golang-templates/seed)
+[![GitHub Release](https://img.shields.io/github/v/release/siredmar/nkey)](https://github.com/siredmar/nkey/releases)
+[![Go Reference](https://pkg.go.dev/badge/github.com/siredmar/nkey.svg)](https://pkg.go.dev/github.com/siredmar/nkey)
+[![go.mod](https://img.shields.io/github/go-mod/go-version/siredmar/nkey)](go.mod)
+[![LICENSE](https://img.shields.io/github/license/siredmar/nkey)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/siredmar/nkey/build.yml?branch=main)](https://github.com/siredmar/nkey/actions?query=workflow%3Abuild+branch%3Amain)
+[![Go Report Card](https://goreportcard.com/badge/github.com/siredmar/nkey)](https://goreportcard.com/report/github.com/siredmar/nkey)
+[![Codecov](https://codecov.io/gh/siredmar/nkey/branch/main/graph/badge.svg)](https://codecov.io/gh/siredmar/nkey)
 
 ⭐ `Star` this repository if you find it valuable and worth maintaining.
 
@@ -15,56 +15,22 @@
 
 ## Description
 
-This is a GitHub repository template for a Go application.
-You can use it:
-
-- to create a new repoisitory with automation and environment setup,
-- as reference when improving automation for an existing repository.
-
-It includes:
-
-- continuous integration via [GitHub Actions](https://github.com/features/actions),
-- build automation via [Make](https://www.gnu.org/software/make),
-- dependency management using [Go Modules](https://github.com/golang/go/wiki/Modules),
-- code formatting using [gofumpt](https://github.com/mvdan/gofumpt),
-- linting with [golangci-lint](https://github.com/golangci/golangci-lint)
-  and [misspell](https://github.com/client9/misspell),
-- unit testing with
-  [race detector](https://blog.golang.org/race-detector),
-  code covarage [HTML report](https://blog.golang.org/cover)
-  and [Codecov report](https://codecov.io/),
-- releasing using [GoReleaser](https://github.com/goreleaser/goreleaser),
-- dependencies scanning and updating thanks to [Dependabot](https://dependabot.com),
-- security code analysis using [CodeQL Action](https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/about-code-scanning),
-- [Visual Studio Code](https://code.visualstudio.com) configuration with [Go](https://code.visualstudio.com/docs/languages/go) support.
+This is a minimalist tool to convert NATS nkeys to a private/public keypair.
 
 ## Usage
 
-1. Sign up on [Codecov](https://codecov.io/) and configure
-   [Codecov GitHub Application](https://github.com/apps/codecov) for all repositories.
-1. Click the `Use this template` button (alt. clone or download this repository).
-1. Replace all occurrences of `golang-templates/seed` to `your_org/repo_name` in all files.
-1. Replace all occurrences of `seed` to `repo_name` in [Dockerfile](Dockerfile).
-1. Update the following files:
-   - [CHANGELOG.md](CHANGELOG.md)
-   - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
-   - [LICENSE](LICENSE)
-   - [README.md](README.md)
-
+```bash
+$ nkey -s <seed>
+# example
+$ nkey -s SAAOW7V3L5YRJGBYY3ZTXB5WHYU4W3HFQ44MBYIBWAECRMD6RMZJTS426E
+Private key: PDVX5O27OEKJQOGG6M5YPNR6FHFWZZMHHDAOCANQBAULA7ULGKM4XXDL2O2N6GNXC7SYZDSCXEWR5NN4SDECHPU77HZX6K7JCJJV5EQFFIZQ
+Public key: ADOGXU5U34M3OF7FRSHEFOJND223ZEGIEO7J76PTP4V6SESTL2JALU4U
+```
 ## Setup
 
-Below you can find sample instructions on how to set up the development environment.
-Of course, you can use other tools like [GoLand](https://www.jetbrains.com/go/),
-[Vim](https://github.com/fatih/vim-go), [Emacs](https://github.com/dominikh/go-mode.el).
-However, take notice that the Visual Studio Go extension is
-[officially supported](https://blog.golang.org/vscode-go) by the Go team.
-
-1. Install [Go](https://golang.org/doc/install).
-1. Install [Visual Studio Code](https://code.visualstudio.com/).
-1. Install [Go extension](https://code.visualstudio.com/docs/languages/go).
-1. Clone and open this repository.
-1. `F1` -> `Go: Install/Update Tools` -> (select all) -> OK.
-
+```bash
+go install github.com/siredmar/nkey@latest
+```
 ## Build
 
 ### Terminal
